@@ -4,7 +4,7 @@ import { addToCart } from '../../redux/cartSlice'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { setIsModalVisible } from '../../redux/modalSlice'
 import { formatPrice } from '../../utils/helpers'
-import { ICart } from '../../utils/interfaces'
+import { IProduct } from '../../utils/interfaces'
 import './ProductDetails.scss'
 
 export default function ProductDetails() {
@@ -31,14 +31,14 @@ export default function ProductDetails() {
     })
   }
 
-  const addToCartHandler = (product: ICart) => {
+  const addToCartHandler = (product: IProduct) => {
     let totalPrice = qty * product.price
-    const tempProduct = {
+    const cartItem = {
       ...product,
       quantity: qty,
       totalPrice
     }
-    dispatch(addToCart(tempProduct))
+    dispatch(addToCart(cartItem))
     dispatch(setIsModalVisible(false))
     navigate('/cart')
   }

@@ -33,7 +33,7 @@ export interface ICatState {
 }
 
 export interface IModalState {
-  data: ICart,
+  data: IProduct,
   isModalVisible: boolean
 }
 
