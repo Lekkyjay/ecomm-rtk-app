@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { getCartTotal } from '../../redux/cartSlice'
 import { fetchCategories, selectAllCategories } from '../../redux/categorySlice'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import './Navbar.scss'
@@ -8,10 +9,11 @@ export default function Navbar() {
   const dispatch = useAppDispatch()
   const categories = useAppSelector(selectAllCategories)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const totalItems = 0   
+  const { totalItems } = useAppSelector((state => state.cart))
 
   useEffect(() => {
     dispatch(fetchCategories())
+    dispatch(getCartTotal())
   }, [])
 
   return (
