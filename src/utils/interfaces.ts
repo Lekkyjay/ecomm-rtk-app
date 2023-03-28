@@ -32,6 +32,7 @@ export interface ICart {
 export interface ICat {
   id: string
   name: string
+  image: string
 }
 
 export interface IState {

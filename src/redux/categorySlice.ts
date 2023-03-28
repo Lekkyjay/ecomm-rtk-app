@@ -52,7 +52,7 @@ export const fetchCategories = () => {
   }
 }
 
-export const fetchProductsByCategory = (categoryID: string, dataType: string) => {
+export const fetchProductsByCategory = (categoryID: number, dataType: string) => {
   return async function fetchCategoryProductThunk(dispatch: Dispatch){
   if(dataType === 'all') dispatch(setCategoriesStatusAll(STATUS.LOADING))
   if(dataType === 'single') dispatch(setCategoriesStatusSingle(STATUS.LOADING))
@@ -78,3 +78,6 @@ export const { setCategories, setStatus, setCategoriesProductAll, setCategoriesS
 export default categorySlice.reducer
 
 export const selectAllCategories = (state: RootState) => state.category.data
+export const selectCategoryStatus = (state: RootState) => state.category.status
+export const selectCategoryAllStatus = (state: RootState) => state.category.catProductAllStatus
+export const selectAllProductsByCategory = (state: RootState) => state.category.catProductAll
