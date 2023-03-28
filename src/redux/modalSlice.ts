@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { IModalState, IProduct } from '../utils/interfaces'
+import { ICart, IModalState } from '../utils/interfaces'
 
 const initialState: IModalState = {
-  data: {} as IProduct,
+  data: {} as ICart,
   isModalVisible: false
 }
 

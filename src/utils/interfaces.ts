@@ -12,21 +12,9 @@ export interface IProduct {
   images: string[]
 }
 
-export interface ICart {
-  id: string
-  title: string
-  description: string
-  price: number
-  discountPercentage: number
-  rating: number
-  stock: number
-  brand: string
-  category: string
-  thumbnail: string
-  images: string[]
-  quantity: number 
-  totalPrice: number 
-  discountedPrice: number
+export interface ICart extends IProduct {
+  quantity: number
+  totalPrice: number
 }
 
 export interface ICat {
@@ -45,11 +33,18 @@ export interface ICatState {
 }
 
 export interface IModalState {
-  data: IProduct,
+  data: ICart,
   isModalVisible: boolean
 }
 
 export interface IProductState {
   data: IProduct[]
   status: string
+}
+
+export interface ICartState {
+  data: ICart[]
+  totalItems: number
+  totalAmount: number
+  deliveryCharge: number
 }
