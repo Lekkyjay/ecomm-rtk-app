@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { fetchCategories, selectAllCategories } from '../../redux/categorySlice'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import './Navbar.scss'
 
 export default function Navbar() {
+  const dispatch = useAppDispatch()
+  const categories = useAppSelector(selectAllCategories)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const totalItems = 0  
-  const categories = [
-    { id: 1, name: 'shoes' }
-  ]
+  const totalItems = 0   
+
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [])
 
   return (
     <nav className = "navbar">
