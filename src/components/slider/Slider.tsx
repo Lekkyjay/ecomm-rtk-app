@@ -1,7 +1,12 @@
-import React from 'react'
+import { sliderImages } from '../../utils/images'
+import './Slider.scss'
 
 export default function Slider() {
   return (
-    <div>Slider</div>
+    <div className = "hero-slider">
+      <div className='hero-slider-item'>
+        <img src = {sliderImages[1]} alt = "" />
+      </div>
+    </div>
   )
 }

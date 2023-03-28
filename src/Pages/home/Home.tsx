@@ -1,7 +1,10 @@
-import React from 'react'
+import Slider from '../../components/slider/Slider'
+import './Home.scss'
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Slider />
+    </div>
   )
 }
