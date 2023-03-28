@@ -35,11 +35,21 @@ export interface ICat {
   image: string
 }
 
-export interface IState {
+export interface ICatState {
   data: ICat[],
   status: string
   catProductAll : IProduct[][],
   catProductAllStatus: string
   catProductSingle : [],
   catProductSingleStatus: string
+}
+
+export interface IModalState {
+  data: IProduct,
+  isModalVisible: boolean
+}
+
+export interface IProductState {
+  data: IProduct[]
+  status: string
 }

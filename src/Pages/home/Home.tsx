@@ -30,7 +30,7 @@ export default function Home() {
         { productsByCategory[0] && <Category products={productsByCategory[0]} status={catProductAllStatus} /> }
       </section>
       <section>
-        { productsByCategory[2] && <Category products={productsByCategory[2]} status={catProductAllStatus} /> }
+        { productsByCategory[1] && <Category products={productsByCategory[1]} status={catProductAllStatus} /> }
       </section>
     </div>
   )

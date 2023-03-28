@@ -1,10 +1,10 @@
 import { createSlice, Dispatch } from '@reduxjs/toolkit'
 import { BASE_URL } from '../utils/apiURL'
-import { IState } from '../utils/interfaces'
+import { ICatState } from '../utils/interfaces'
 import { STATUS } from '../utils/status'
 import { RootState } from './store'
 
-const initialState: IState = {
+const initialState: ICatState = {
   data: [],
   status: STATUS.IDLE,
   catProductAll : [],
