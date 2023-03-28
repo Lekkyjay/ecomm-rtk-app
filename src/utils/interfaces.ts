@@ -7,7 +7,7 @@ export interface IProduct {
   rating: number
   stock: number
   brand: string
-  category: string
+  category: ICat
   thumbnail: string
   images: string[]
 }
@@ -38,7 +38,7 @@ export interface ICat {
 export interface IState {
   data: ICat[],
   status: string
-  catProductAll : IProduct[],
+  catProductAll : IProduct[][],
   catProductAllStatus: string
   catProductSingle : [],
   catProductSingleStatus: string
