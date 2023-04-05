@@ -26,7 +26,7 @@ export default function Products({products, status, id}: IProps) {
   if(status === STATUS.ERROR) return (<Error />)
   if(status === STATUS.LOADING) return (<Loader />)
 
-  const title = id ? products[0].category.name : 'Our Products'
+  const title = id ? products[0] && products[0].category.name : 'Our Products'
 
   return (
     <section className='product py-5 bg-ghost-white' id = "products">
