@@ -34,7 +34,7 @@ export default function Category() {
               </span>
             </li>
             <li>
-              { products[0] && products[0].category.name}
+              { products[0] && products[0].category?.name}
             </li>
           </ul>
         </div>
