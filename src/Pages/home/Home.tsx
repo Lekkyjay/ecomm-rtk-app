@@ -4,7 +4,7 @@ import Category from '../../components/category/Category'
 import Products from '../../components/products/Products'
 import Slider from '../../components/slider/Slider'
 import { 
-  fetchCategories, fetchProductsByCategory, selectAllCategories, selectAllProductsByCategory, selectCategoryAllStatus, selectCategoryStatus 
+  fetchCategories, fetchProductsByCategory, selectAllCategories, selectProductsAllCat, selectStatusAllCat, selectCategoryStatus 
 } from '../../redux/categorySlice'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { fetchProducts } from '../../redux/productSlice'
@@ -14,8 +14,8 @@ export default function Home() {
   const dispatch = useAppDispatch()
   const categories = useAppSelector(selectAllCategories)
   const categoryStatus = useAppSelector(selectCategoryStatus)
-  const productsByCategory = useAppSelector(selectAllProductsByCategory)
-  const catProductAllStatus = useAppSelector(selectCategoryAllStatus)
+  const productsAllCategory = useAppSelector(selectProductsAllCat)
+  const catProductAllStatus = useAppSelector(selectStatusAllCat)
   const {data: products, status: productStatus} = useAppSelector((state) => state.product)
 
   useEffect(() => {
@@ -31,10 +31,10 @@ export default function Home() {
       <Categories categories={categories} status={categoryStatus} />
       <Products products={products} status={productStatus} />
       <section>
-        { productsByCategory[0] && <Category products={productsByCategory[0]} status={catProductAllStatus} /> }
+        { productsAllCategory[0] && <Category products={productsAllCategory[0]} status={catProductAllStatus} /> }
       </section>
       <section>
-        { productsByCategory[1] && <Category products={productsByCategory[1]} status={catProductAllStatus} /> }
+        { productsAllCategory[1] && <Category products={productsAllCategory[1]} status={catProductAllStatus} /> }
       </section>
     </div>
   )

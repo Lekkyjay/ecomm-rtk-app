@@ -79,5 +79,7 @@ export default categorySlice.reducer
 
 export const selectAllCategories = (state: RootState) => state.category.data
 export const selectCategoryStatus = (state: RootState) => state.category.status
-export const selectCategoryAllStatus = (state: RootState) => state.category.catProductAllStatus
-export const selectAllProductsByCategory = (state: RootState) => state.category.catProductAll
+export const selectStatusAllCat = (state: RootState) => state.category.catProductAllStatus
+export const selectStatusSingleCat = (state: RootState) => state.category.catProductSingleStatus
+export const selectProductsAllCat = (state: RootState) => state.category.catProductAll
+export const selectProductsSingleCat = (state: RootState) => state.category.catProductSingle

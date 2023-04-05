@@ -28,7 +28,7 @@ export interface ICatState {
   status: string
   catProductAll : IProduct[][],
   catProductAllStatus: string
-  catProductSingle : [],
+  catProductSingle : IProduct[],
   catProductSingleStatus: string
 }
 

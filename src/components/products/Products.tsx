@@ -11,9 +11,10 @@ import './Products.scss'
 interface IProps {
   products: IProduct[]
   status: string
+  id?: string
 }
 
-export default function Products({products, status}: IProps) {
+export default function Products({products, status, id}: IProps) {
   const dispatch = useAppDispatch()
   const {isModalVisible} = useAppSelector((state) => state.modal)
 
@@ -25,6 +26,8 @@ export default function Products({products, status}: IProps) {
   if(status === STATUS.ERROR) return (<Error />)
   if(status === STATUS.LOADING) return (<Loader />)
 
+  const title = id ? products[0].category.name : 'Our Products'
+
   return (
     <section className='product py-5 bg-ghost-white' id = "products">
       { isModalVisible && <ProductDetails />}
@@ -32,7 +35,7 @@ export default function Products({products, status}: IProps) {
       <div className='container'>
         <div className='product-content'>
           <div className='section-title'>
-            <h3 className='text-uppercase fw-7 text-regal-blue ls-1'>Our Products</h3>
+            <h3 className='text-uppercase fw-7 text-regal-blue ls-1'>{title}</h3>
           </div>
           <div className='product-items grid'>
             {
