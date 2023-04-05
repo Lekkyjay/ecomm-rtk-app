@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks'
 import { useEffect } from 'react'
 import { fetchProductsByCategory, selectStatusSingleCat, selectProductsSingleCat } from '../../redux/categorySlice'
 import Products from '../../components/products/Products'
+import './Category.scss'
 
 export default function Category() {
   const dispatch = useAppDispatch()
